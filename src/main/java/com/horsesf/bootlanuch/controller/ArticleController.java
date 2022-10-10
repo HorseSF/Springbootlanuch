@@ -2,6 +2,8 @@ package com.horsesf.bootlanuch.controller;
 
 import java.util.Date;
 
+import javax.annotation.Resource;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.horsesf.bootlanuch.AjaxResponse;
 import com.horsesf.bootlanuch.model.Article;
+import com.horsesf.bootlanuch.service.ArticleService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +24,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/rest")
 public class ArticleController {
+
+    @Resource
+    ArticleService articleService;
 
     // 查询文章，根据id
     // @RequestMapping(value = "/articles/{id}", method = RequestMethod.GET)
@@ -45,7 +51,7 @@ public class ArticleController {
 
         log.info("saveArticle", article);
 
-        return AjaxResponse.success();
+        return AjaxResponse.success(article);
     }
 
     // 修改文章
