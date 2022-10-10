@@ -1,5 +1,6 @@
-// TODO error
-// package com.horsesf.bootlanuch.cofig;
+// TODO Error
+
+// package com.horsesf.bootlanuch.config;
 
 // import org.springframework.context.annotation.Bean;
 // import org.springframework.context.annotation.Configuration;
